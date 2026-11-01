@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07111f">
+<title>GoalBuzz | Football & Entertainment News</title>
+<style>
+:root{--bg:#07111f;--panel:#101d30;--panel2:#13243a;--text:#f5f7fb;--muted:#a8b5c7;--red:#ff3155;--purple:#8b5cf6;--line:#24364c}
+*{box-sizing:border-box}body{margin:0;background:#081321;color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:inherit;text-decoration:none}.top{background:#050b13;border-bottom:1px solid var(--line);padding:8px 5%;font-size:13px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+header{padding:22px 5%;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;background:linear-gradient(120deg,#0a1525,#111b32)}
+.brand{font-weight:950;font-size:clamp(30px,5vw,46px);letter-spacing:-1.8px}.brand span{color:var(--red)}.tag{font-size:12px;color:var(--muted);margin-top:-5px}
+nav{display:flex;gap:8px;flex-wrap:wrap;padding:12px 5%;background:#0d1929;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+nav a{padding:9px 14px;border-radius:8px;font-weight:750;font-size:14px}nav a.active,nav a:hover{background:var(--red);color:white}
+main{max-width:1250px;margin:24px auto;padding:0 18px}.intro{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:18px}.intro h1{font-size:clamp(25px,4vw,38px);line-height:1.1;margin:0}.intro p{color:var(--muted);margin:8px 0 0}.pill{display:inline-block;background:#281d35;color:#ffc6d0;border:1px solid #673044;padding:5px 10px;border-radius:99px;font-size:12px;font-weight:800}
+.grid{display:grid;grid-template-columns:1.3fr 1fr;gap:18px}.feature{background:linear-gradient(140deg,#172842,#101827);border:1px solid var(--line);border-radius:16px;padding:24px;min-height:240px;display:flex;flex-direction:column;justify-content:end;position:relative;overflow:hidden}.feature:before{content:"⚽";position:absolute;right:22px;top:5px;font-size:110px;opacity:.09}.feature h2{font-size:clamp(24px,4vw,36px);line-height:1.12;margin:12px 0}.feature p{color:#c2ccda;max-width:560px}.feature .button{align-self:flex-start;background:var(--red);padding:10px 15px;border-radius:9px;font-weight:800}
+.sidecards{display:grid;gap:12px}.mini{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}.mini h3{margin:8px 0;font-size:20px}.mini p{margin:0;color:var(--muted);font-size:14px}
+.sections{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}.section{background:var(--panel);border:1px solid var(--line);border-radius:15px;overflow:hidden}.section-head{padding:16px 18px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}.section-head h2{font-size:22px;margin:0}.section-head.football{border-top:4px solid #17b978}.section-head.ent{border-top:4px solid var(--purple)}
+.stories{padding:6px 18px}.story{padding:15px 0;border-bottom:1px solid var(--line)}.story:last-child{border-bottom:0}.story a{font-weight:800;font-size:17px;line-height:1.3;display:block}.story a:hover{color:#ff7890}.meta{font-size:12px;color:var(--muted);margin-top:6px}.desc{font-size:14px;color:#c0cada;margin:7px 0 0}
+.status{color:var(--muted);font-size:13px;padding:0 18px 15px}.refresh{border:1px solid #3b4b62;background:#16263a;color:white;border-radius:8px;padding:8px 12px;font-weight:750;cursor:pointer}.notice{margin-top:20px;padding:15px 18px;border-radius:12px;background:#111e2f;border:1px solid var(--line);color:var(--muted);font-size:13px}
+footer{margin-top:32px;padding:26px 5%;background:#050b13;border-top:1px solid var(--line);color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:760px){.grid,.sections{grid-template-columns:1fr}.feature{min-height:230px;padding:20px}.top{justify-content:center}header{align-items:flex-start}main{margin-top:18px}.intro{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="top"><span>⚡ Fast updates. Big stories.</span><span>Football • Entertainment • Trending</span></div>
+<header>
+  <div><div class="brand">Goal<span>Buzz</span> 🔥</div><div class="tag">Your daily dose of football & entertainment</div></div>
+  <button class="refresh" id="refreshBtn">↻ Refresh headlines</button>
+</header>
+<nav>
+  <a class="active" href="#home">Home</a><a href="#football">⚽ Football</a><a href="#entertainment">🎬 Entertainment</a><a href="#about">About GoalBuzz</a>
+</nav>
+<main id="home">
+  <div class="intro"><div><span class="pill">THE LATEST BUZZ</span><h1>Stay in the know.</h1><p>Football stories, transfer talk and entertainment headlines in one place.</p></div></div>
+  <div class="grid">
+    <article class="feature">
+      <span class="pill">WELCOME TO GOALBUZZ</span>
+      <h2>Big football moments. Bigger entertainment stories.</h2>
+      <p>Explore headlines from news publishers. Tap any story to read the full report on its original website.</p>
+      <a class="button" href="#football">Explore latest stories →</a>
+    </article>
+    <div class="sidecards">
+      <article class="mini"><span class="pill">⚽ FOOTBALL</span><h3>Transfer rumours, match reports and club updates</h3><p>Follow the stories football fans are talking about.</p></article>
+      <article class="mini"><span class="pill" style="background:#281e46;color:#ddccff">🎬 ENTERTAINMENT</span><h3>Music, movies and celebrity headlines</h3><p>Catch up on popular culture and entertainment news.</p></article>
+    </div>
+  </div>
+  <div class="sections">
+    <section class="section" id="football"><div class="section-head football"><h2>⚽ Football News</h2><span class="pill">LIVE FEED</span></div><div class="stories" id="footballStories"><p class="desc">Loading football headlines…</p></div><div class="status" id="footballStatus">Connecting to news feed…</div></section>
+    <section class="section" id="entertainment"><div class="section-head ent"><h2>🎬 Entertainment</h2><span class="pill" style="background:#281e46;color:#ddccff">LIVE FEED</span></div><div class="stories" id="entertainmentStories"><p class="desc">Loading entertainment headlines…</p></div><div class="status" id="entertainmentStatus">Connecting to news feed…</div></section>
+  </div>
+  <div class="notice" id="about"><strong style="color:#f5f7fb">About this starter site:</strong> GoalBuzz is an independent news-discovery page. Headlines are fetched from Google News RSS through a third-party feed converter and link to their original publishers. Availability depends on the feed service and internet connection. Before monetising, check publishers’ terms, use your own summaries and commentary, and never copy full articles or images without permission.</div>
+</main>
+<footer><div><strong style="color:white;font-size:18px">Goal<span style="color:var(--red)">Buzz</span></strong><br>Football • Entertainment • Trending</div><div>© <span id="year"></span> GoalBuzz. Independent news discovery.</div></footer>
+<script>
+const feeds = {
+  football: "https://news.google.com/rss/search?q=football+when:7d&hl=en-NG&gl=NG&ceid=NG:en",
+  entertainment: "https://news.google.com/rss/search?q=entertainment+music+celebrity+when:7d&hl=en-NG&gl=NG&ceid=NG:en"
+};
+const converter = "https://api.rss2json.com/v1/api.json?rss_url=";
+function safeText(value){const d=document.createElement("div");d.textContent=value||"";return d.innerHTML;}
+function renderItems(target, items){
+  const el=document.getElementById(target);
+  if(!items || !items.length){el.innerHTML='<p class="desc">No headlines returned right now. Try refreshing in a moment.</p>';return;}
+  el.innerHTML=items.slice(0,8).map(item=>{
+    const title=safeText(item.title);
+    const link=/^https?:\/\//i.test(item.link||"")?item.link:"#";
+    const date=item.pubDate?new Date(item.pubDate).toLocaleString(undefined,{dateStyle:"medium",timeStyle:"short"}):"Latest";
+    const source=safeText(item.author||"Original publisher");
+    return `<article class="story"><a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a><div class="meta">🕒 ${safeText(date)} · ${source}</div></article>`;
+  }).join("");
+}
+async function loadFeed(category){
+  const status=document.getElementById(category+"Status");
+  status.textContent="Loading latest headlines…";
+  try{
+    const response=await fetch(converter+encodeURIComponent(feeds[category]));
+    if(!response.ok) throw new Error("Feed service unavailable");
+    const data=await response.json();
+    if(data.status!=="ok") throw new Error("Feed could not be read");
+    renderItems(category+"Stories",data.items);
+    status.textContent="Updated "+new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"})+" · Open stories on their original sites.";
+  }catch(e){
+    document.getElementById(category+"Stories").innerHTML='<p class="desc">We could not load headlines right now. The free feed service may be busy or blocked. Tap “Refresh headlines” to try again.</p>';
+    status.textContent="Feed temporarily unavailable.";
+  }
+}
+function refresh(){loadFeed("football");loadFeed("entertainment");}
+document.getElementById("refreshBtn").addEventListener("click",refresh);
+document.getElementById("year").textContent=new Date().getFullYear();
+refresh();
+</script>
+</body>
+</html>
